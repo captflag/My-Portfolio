@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: "Monigue Regular", "Space Mono", monospace;
+        background-color: #280b0b;
+        color: #f9e7c9;
+        overflow-x: hidden;
+        font-weight: 400;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .font-heading {
+        font-family: "Helvetica Now Display XBlack", "Outfit", "Inter", sans-serif;
+        font-weight: 900;
+        letter-spacing: -0.05em;
+    }
+
+    ::selection {
+        background: #c92924;
+        color: #f9e7c9;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #280b0b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #3a0f0f;
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #c92924;
+    }
+}
+
+@layer utilities {
+    .mesh-gradient {
+        background: linear-gradient(45deg, #280b0b, #1d0808, #3a0f0f, #280b0b);
+        background-size: 400% 400%;
+    }
+
+    .micro-grid {
+        background-image: radial-gradient(rgba(249, 231, 201, 0.1) 0.5px, transparent 0.5px);
+        background-size: 8px 8px;
+    }
+
+    .neural-grid {
+        background-image:
+            linear-gradient(to right, rgba(201, 41, 36, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(201, 41, 36, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    .glass {
+        background: rgba(40, 11, 11, 0.7);
+        backdrop-filter: blur(30px) saturate(150%);
+        border: 1px solid rgba(249, 231, 201, 0.05);
+    }
+
+    .glow-border {
+        position: relative;
+    }
+
+    .glow-border::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(201, 41, 36, 0.4), transparent 35%);
+        border-radius: inherit;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .glow-border:hover::before {
+        opacity: 1;
+    }
+
+    .text-glow-blue {
+        text-shadow: 0 0 15px rgba(201, 41, 36, 0.6);
+    }
+
+    .haptic-pulse:active {
+        transform: scale(0.98);
+        transition: transform 0.1s;
+    }
+}
