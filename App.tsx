@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, Reorder } from 'framer-motion';
 import TerminalHero from './components/TerminalHero';
 import SolutionGrid from './components/SolutionGrid';
@@ -22,10 +22,17 @@ const App: React.FC = () => {
     'contact'
   ]);
 
+  // Detect if user is on a touch device
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
   const handleIntent = (intent: string) => {
     // Basic intent matching to re-order sections
     let newOrder = [...sectionOrder];
-    
+
     if (intent.includes('service') || intent.includes('work') || intent.includes('case')) {
       newOrder = moveSectionToFront('services', newOrder);
     } else if (intent.includes('rag') || intent.includes('visual') || intent.includes('logic')) {
@@ -65,20 +72,37 @@ const App: React.FC = () => {
       <LivingCommandBar onIntent={handleIntent} />
 
       <main className="relative pt-32">
-        <Reorder.Group axis="y" values={sectionOrder} onReorder={setSectionOrder} className="list-none">
-          {sectionOrder.map(id => (
-            <Reorder.Item key={id} value={id}>
+        {isTouchDevice ? (
+          // Mobile: Simple scrollable list without reordering
+          <div className="list-none">
+            {sectionOrder.map(id => (
               <motion.div
-                layout
+                key={id}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ layout: { duration: 0.6, type: "spring", bounce: 0.2 } }}
+                transition={{ duration: 0.6 }}
               >
                 {renderSection(id)}
               </motion.div>
-            </Reorder.Item>
-          ))}
-        </Reorder.Group>
+            ))}
+          </div>
+        ) : (
+          // Desktop: Reorderable sections
+          <Reorder.Group axis="y" values={sectionOrder} onReorder={setSectionOrder} className="list-none">
+            {sectionOrder.map(id => (
+              <Reorder.Item key={id} value={id}>
+                <motion.div
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ layout: { duration: 0.6, type: "spring", bounce: 0.2 } }}
+                >
+                  {renderSection(id)}
+                </motion.div>
+              </Reorder.Item>
+            ))}
+          </Reorder.Group>
+        )}
       </main>
 
       <CommandBar onIntent={handleIntent} />
