@@ -1,12 +1,12 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { 
-  X, 
-  Cpu, 
-  Zap, 
-  Search, 
-  MessageSquare, 
+import {
+  X,
+  Cpu,
+  Zap,
+  Search,
+  MessageSquare,
   Database,
   Activity,
   TrendingUp,
@@ -97,7 +97,7 @@ const LogicFlowVisual = ({ steps }: { steps: string[] }) => {
               {step}
             </div>
             {i < steps.length - 1 && (
-              <motion.div 
+              <motion.div
                 animate={{ x: [0, 5, 0], opacity: [0.3, 1, 0.3] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
               >
@@ -126,7 +126,7 @@ const ProtocolCard: React.FC<{ protocol: any; onExpand: (p: any) => void }> = ({
       className={`group relative overflow-hidden glass rounded-xl border border-white/5 hover:border-cyber-blue/50 p-6 flex flex-col transition-all duration-500 cursor-pointer ${protocol.colSpan} min-h-[280px] md:min-h-[300px]`}
     >
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_bottom,transparent_50%,#000_50%)] bg-[length:100%_4px]" />
-      
+
       <div className="relative z-10">
         <div className="flex justify-between items-start mb-6">
           <div className="flex flex-col">
@@ -147,8 +147,8 @@ const ProtocolCard: React.FC<{ protocol: any; onExpand: (p: any) => void }> = ({
         </div>
 
         <div className="mb-4 inline-flex items-center gap-1.5 px-2 py-1 rounded bg-white/5 border border-white/10 text-[8px] font-mono text-cyber-purple/80 uppercase tracking-widest">
-           <ShieldCheck size={10} className="text-cyber-blue" />
-           {protocol.advantage}
+          <ShieldCheck size={10} className="text-cyber-blue" />
+          {protocol.advantage}
         </div>
 
         <p className="text-sm font-light text-cyber-purple/60 mb-8 leading-relaxed line-clamp-2 md:line-clamp-none">
@@ -162,7 +162,7 @@ const ProtocolCard: React.FC<{ protocol: any; onExpand: (p: any) => void }> = ({
           <span className="text-white">{protocol.metric}</span>
         </div>
         <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -180,7 +180,7 @@ const SolutionGrid: React.FC = () => {
   return (
     <section className="py-16 md:py-24 px-4 md:px-20 bg-cyber-black relative" id="protocols">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-cyber-blue/5 to-transparent pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-white/5 pb-8 gap-6">
           <div>
@@ -199,10 +199,10 @@ const SolutionGrid: React.FC = () => {
         <LayoutGroup>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {PROTOCOLS.map((protocol) => (
-              <ProtocolCard 
-                key={protocol.id} 
-                protocol={protocol} 
-                onExpand={setExpandedProtocol} 
+              <ProtocolCard
+                key={protocol.id}
+                protocol={protocol}
+                onExpand={setExpandedProtocol}
               />
             ))}
           </div>
@@ -226,11 +226,11 @@ const SolutionGrid: React.FC = () => {
               {/* Scanline Overlay */}
               <div className="absolute inset-0 pointer-events-none opacity-[0.05] bg-[linear-gradient(to_bottom,transparent_50%,#fff_50%)] bg-[length:100%_4px]" />
 
-              <button 
+              <button
                 onClick={() => setExpandedProtocol(null)}
-                className="absolute top-4 right-4 p-3 bg-white/5 hover:bg-cyber-blue/20 rounded-full transition-all text-white z-50 haptic-pulse"
+                className="absolute top-3 right-3 md:top-4 md:right-4 p-3 md:p-3 min-w-[48px] min-h-[48px] bg-white/5 hover:bg-cyber-blue/20 rounded-full transition-all text-white z-50 haptic-pulse flex items-center justify-center"
               >
-                <X size={20} />
+                <X size={22} />
               </button>
 
               <div className="w-full md:w-3/5 p-6 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/5 relative z-10">
@@ -240,12 +240,12 @@ const SolutionGrid: React.FC = () => {
                 <h3 className="text-4xl md:text-7xl font-black uppercase tracking-tighter text-white mb-6 leading-[0.9]">
                   {expandedProtocol.title}
                 </h3>
-                
+
                 <div className="mb-8 p-6 rounded-2xl bg-white/5 border border-white/5">
-                   <div className="text-[10px] font-bold uppercase text-cyber-blue mb-2">Proven_Impact</div>
-                   <p className="text-lg md:text-xl text-white font-medium leading-tight">
-                     {expandedProtocol.caseStudy}
-                   </p>
+                  <div className="text-[10px] font-bold uppercase text-cyber-blue mb-2">Proven_Impact</div>
+                  <p className="text-lg md:text-xl text-white font-medium leading-tight">
+                    {expandedProtocol.caseStudy}
+                  </p>
                 </div>
 
                 <p className="text-base md:text-lg text-cyber-purple/60 font-light mb-8 leading-relaxed">
@@ -257,36 +257,36 @@ const SolutionGrid: React.FC = () => {
 
               <div className="w-full md:w-2/5 bg-cyber-dark p-8 md:p-12 relative overflow-hidden flex flex-col items-center justify-center text-center">
                 <div className="absolute inset-0 micro-grid opacity-20" />
-                
-                <div className="relative z-10 w-full">
-                   <div className="mb-12">
-                      <div className="text-cyber-blue font-mono text-[10px] uppercase mb-1">Efficiency_Target</div>
-                      <div className="text-5xl md:text-7xl font-black text-white tracking-tighter">99.9%</div>
-                      <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Uptime_Guaranteed</div>
-                   </div>
 
-                   <div className="text-2xl md:text-4xl font-black text-white mb-2 uppercase tracking-tight">Initial Recon</div>
-                   <div className="text-6xl md:text-8xl font-black text-cyber-blue mb-8 animate-glitch tracking-tighter italic leading-none">FREE</div>
-                   
-                   <button 
-                      onClick={() => {
-                         setExpandedProtocol(prev => {
-                            const p = prev;
-                            setExpandedProtocol(null);
-                            setTimeout(() => {
-                               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                            }, 100);
-                            return p;
-                         });
-                      }}
-                      className="w-full py-5 bg-white text-black font-black uppercase tracking-[0.2em] text-xs hover:bg-cyber-blue hover:text-white transition-all rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.1)] haptic-pulse"
-                   >
-                      Initialize_Protocol
-                   </button>
-                   
-                   <div className="mt-6 text-[9px] font-mono text-slate-500 uppercase tracking-widest flex items-center justify-center gap-2">
-                      <TrendingUp size={10} /> ROI_FORECAST_ENABLED
-                   </div>
+                <div className="relative z-10 w-full">
+                  <div className="mb-12">
+                    <div className="text-cyber-blue font-mono text-[10px] uppercase mb-1">Efficiency_Target</div>
+                    <div className="text-5xl md:text-7xl font-black text-white tracking-tighter">99.9%</div>
+                    <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Uptime_Guaranteed</div>
+                  </div>
+
+                  <div className="text-2xl md:text-4xl font-black text-white mb-2 uppercase tracking-tight">Initial Recon</div>
+                  <div className="text-6xl md:text-8xl font-black text-cyber-blue mb-8 animate-glitch tracking-tighter italic leading-none">FREE</div>
+
+                  <button
+                    onClick={() => {
+                      setExpandedProtocol(prev => {
+                        const p = prev;
+                        setExpandedProtocol(null);
+                        setTimeout(() => {
+                          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                        return p;
+                      });
+                    }}
+                    className="w-full py-5 md:py-6 min-h-[52px] bg-white text-black font-black uppercase tracking-[0.2em] text-sm hover:bg-cyber-blue hover:text-white transition-all rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.1)] haptic-pulse"
+                  >
+                    Initialize_Protocol
+                  </button>
+
+                  <div className="mt-6 text-[9px] font-mono text-slate-500 uppercase tracking-widest flex items-center justify-center gap-2">
+                    <TrendingUp size={10} /> ROI_FORECAST_ENABLED
+                  </div>
                 </div>
               </div>
             </motion.div>

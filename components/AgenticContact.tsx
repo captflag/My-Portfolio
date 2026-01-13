@@ -38,7 +38,7 @@ const AgenticContact: React.FC = () => {
           <p className="text-cyber-purple/60 mb-8 md:mb-12 text-base md:text-lg max-w-md mx-auto lg:mx-0 font-light leading-relaxed">
             Initialize your autonomous workflow by starting a conversation with our project architect bot.
           </p>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
             <div className="flex items-center gap-4 p-4 glass rounded-xl border-white/5 bg-white/5">
               <div className="w-2 h-2 rounded-full bg-cyber-blue animate-pulse shadow-[0_0_10px_rgba(201,41,36,0.8)] shrink-0"></div>
@@ -59,7 +59,7 @@ const AgenticContact: React.FC = () => {
 
         <div className="glass rounded-2xl md:rounded-3xl p-4 md:p-6 flex flex-col h-[500px] md:h-[600px] border-cyber-blue/20 relative overflow-hidden">
           <div className="absolute inset-0 micro-grid pointer-events-none opacity-10" />
-          
+
           <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2 md:pr-4 custom-scrollbar relative z-10">
             {messages.map((m, i) => (
               <motion.div
@@ -87,15 +87,15 @@ const AgenticContact: React.FC = () => {
             )}
           </div>
           <form onSubmit={handleSend} className="relative mt-auto z-10">
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Transmit specs..."
-              className="w-full bg-cyber-black/50 border border-white/10 rounded-xl md:rounded-2xl py-4 md:py-5 px-4 md:px-6 focus:outline-none focus:border-cyber-blue font-mono text-xs md:text-sm text-white placeholder:text-slate-600"
+              className="w-full bg-cyber-black/50 border border-white/10 rounded-xl md:rounded-2xl py-4 md:py-5 px-4 md:px-6 pr-14 md:pr-16 focus:outline-none focus:border-cyber-blue font-mono text-xs md:text-sm text-white placeholder:text-slate-600"
             />
-            <button className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 p-2 bg-cyber-blue text-white rounded-lg hover:scale-105 shadow-[0_0_15px_rgba(201,41,36,0.4)]">
-              <Send size={16} />
+            <button className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 p-3 md:p-3.5 min-w-[44px] min-h-[44px] bg-cyber-blue text-white rounded-lg hover:scale-105 shadow-[0_0_15px_rgba(201,41,36,0.4)] flex items-center justify-center">
+              <Send size={18} />
             </button>
           </form>
         </div>

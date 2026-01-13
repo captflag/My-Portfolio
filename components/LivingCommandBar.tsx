@@ -11,9 +11,9 @@ const ScrambleText = ({ text, className }: { text: string; className?: string })
   const startScramble = () => {
     let iteration = 0;
     if (intervalRef.current) clearInterval(intervalRef.current);
-    
+
     intervalRef.current = window.setInterval(() => {
-      setDisplayText(prev => 
+      setDisplayText(prev =>
         text.split("").map((char, index) => {
           if (index < iteration) return text[index];
           return CHARS[Math.floor(Math.random() * CHARS.length)];
@@ -26,7 +26,7 @@ const ScrambleText = ({ text, className }: { text: string; className?: string })
   };
 
   return (
-    <span 
+    <span
       className={className}
       onMouseEnter={startScramble}
     >
@@ -55,12 +55,12 @@ const ReactiveWaveform = () => {
       {[...Array(8)].map((_, i) => (
         <motion.div
           key={i}
-          animate={{ 
+          animate={{
             height: [4, 8 + Math.random() * (velocity / 2), 4],
             backgroundColor: velocity > 50 ? '#f9e7c9' : '#c92924'
           }}
-          transition={{ 
-            duration: 0.2 + (Math.random() * 0.3), 
+          transition={{
+            duration: 0.2 + (Math.random() * 0.3),
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -101,10 +101,10 @@ const MagneticButton = ({ label, activeLabel, onClick }: { label: string; active
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
       style={{ x: springX, y: springY }}
-      className="relative group px-4 md:px-6 py-2 bg-white text-black text-[9px] md:text-[10px] font-bold uppercase tracking-widest transition-all duration-300 overflow-hidden rounded-lg haptic-pulse shrink-0"
+      className="relative group px-5 md:px-6 py-3 md:py-3 min-h-[44px] bg-white text-black text-[10px] md:text-[11px] font-bold uppercase tracking-widest transition-all duration-300 overflow-hidden rounded-lg haptic-pulse shrink-0"
     >
       <div className="absolute inset-0 bg-cyber-blue opacity-0 group-hover:opacity-100 transition-opacity blur-md" />
-      <span className="relative z-10 block min-w-[80px] md:min-w-[120px]">
+      <span className="relative z-10 block min-w-[90px] md:min-w-[120px]">
         {isHovered ? activeLabel : label}
       </span>
     </motion.button>
@@ -115,24 +115,24 @@ const ProfessionalLogo = () => {
   return (
     <div className="flex items-center gap-2 md:gap-4 group/logo cursor-pointer select-none">
       <div className="relative w-8 h-8 md:w-12 md:h-12 flex items-center justify-center">
-        <motion.svg 
-          viewBox="0 0 100 100" 
+        <motion.svg
+          viewBox="0 0 100 100"
           className="absolute inset-0 w-full h-full text-cyber-blue opacity-40"
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         >
-          <path 
-            d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
+          <path
+            d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
             strokeDasharray="10 20"
           />
         </motion.svg>
-        
-        <motion.div 
+
+        <motion.div
           className="w-5 h-5 md:w-8 md:h-8 rounded md:rounded-lg bg-cyber-blue flex items-center justify-center relative z-10 shadow-[0_0_20px_rgba(201,41,36,0.5)]"
-          animate={{ 
+          animate={{
             scale: [1, 1.05, 1],
             boxShadow: [
               "0 0 20px rgba(201, 41, 36, 0.4)",
@@ -167,7 +167,7 @@ export const LivingCommandBar = ({ onIntent }: { onIntent: (intent: string) => v
     <header className="fixed top-2 md:top-4 left-1/2 -translate-x-1/2 w-[98%] max-w-7xl z-[100] px-2 md:px-4">
       <div className="relative group glass rounded-xl md:rounded-2xl overflow-hidden backdrop-blur-xl bg-black/40 border border-cyber-blue/20 p-2 md:p-3 md:px-8 flex justify-between items-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0 micro-grid pointer-events-none opacity-40" />
-        
+
         <ProfessionalLogo />
 
         <nav className="hidden lg:flex items-center gap-10 text-[10px] font-mono uppercase tracking-[0.4em] text-cyber-purple/70">
@@ -193,10 +193,10 @@ export const LivingCommandBar = ({ onIntent }: { onIntent: (intent: string) => v
             </div>
           </div>
 
-          <MagneticButton 
-            label="SYS_ENTRY" 
-            activeLabel="INITIALIZE >" 
-            onClick={() => onIntent('contact')} 
+          <MagneticButton
+            label="SYS_ENTRY"
+            activeLabel="INITIALIZE >"
+            onClick={() => onIntent('contact')}
           />
         </div>
       </div>

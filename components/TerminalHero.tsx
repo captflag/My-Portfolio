@@ -28,7 +28,7 @@ const TerminalHero: React.FC = () => {
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center px-4 md:px-20 pt-20 md:pt-20 overflow-hidden">
       <NeuralGrid />
-      
+
       <div className="relative z-10 max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,8 +36,8 @@ const TerminalHero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center lg:text-left"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-[9px] md:text-[10px] uppercase tracking-[0.2em] mb-6 font-mono">
-            <Activity size={10} className="animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-[10px] md:text-[11px] uppercase tracking-[0.2em] mb-6 font-mono">
+            <Activity size={12} className="animate-pulse" />
             System_Status: Operational
           </div>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.9] mb-6 md:mb-8 text-white">
@@ -46,19 +46,19 @@ const TerminalHero: React.FC = () => {
           <p className="text-cyber-purple/60 text-base md:text-xl max-w-xl mx-auto lg:mx-0 mb-8 md:mb-10 leading-relaxed font-light">
             Architecting the future of enterprise automation through <span className="text-cyber-blue font-bold">agentic workflows</span> and high-fidelity <span className="text-white">RAG architecture</span>.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button 
+            <button
               onClick={() => document.getElementById('consultation')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-8 py-4 bg-cyber-blue text-white font-bold uppercase tracking-widest hover:bg-cyber-purple hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(201,41,36,0.3)] haptic-pulse"
+              className="w-full sm:w-auto px-8 py-5 min-h-[48px] bg-cyber-blue text-white font-bold uppercase text-sm tracking-widest hover:bg-cyber-purple hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(201,41,36,0.3)] haptic-pulse"
             >
               Launch_Project
             </button>
-            <button 
+            <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-8 py-4 border border-white/20 hover:border-cyber-blue transition-all uppercase text-xs tracking-widest font-bold text-cyber-purple/80 bg-white/5 flex items-center justify-center gap-3"
+              className="w-full sm:w-auto px-8 py-5 min-h-[48px] border border-white/20 hover:border-cyber-blue transition-all uppercase text-sm tracking-widest font-bold text-cyber-purple/80 bg-white/5 flex items-center justify-center gap-3"
             >
-              <Calendar size={16} className="text-cyber-blue" />
+              <Calendar size={18} className="text-cyber-blue" />
               Book_a_Meeting
             </button>
           </div>
