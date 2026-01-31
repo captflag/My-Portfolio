@@ -1,60 +1,128 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# CAPT AI | Autonomous Command Center 🤖
 
-# Run and deploy your AI Studio app
+A cutting-edge AI portfolio showcasing autonomous cognitive architecture and enterprise-grade AI solutions. Built with React, Vite, and powered by Google's Gemini AI.
 
-This contains everything you need to run your app locally.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/captflag/My-Portfolio)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1nEJrEBH93vG2H96Ge8ff8IviOB7tA3n9
+## 📸 Preview
 
-## Run Locally
+![Low Latency Hero Section](preview-hero.png)
+*Terminal-style hero section with real-time system monitoring*
 
-**Prerequisites:**  Node.js
+![POC Playground](preview-poc.png)
+*AI-powered lead generation and workflow automation*
 
+## ✨ Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **🎨 Cyberpunk Design** - Modern, dynamic UI with glassmorphism and micro-animations
+- **🤖 AI-Powered Chat** - Interactive consultation using Gemini AI
+- **📊 RAG Visualizer** - Real-time demonstration of Retrieval-Augmented Generation
+- **🔄 Adaptive Layout** - Dynamic section reordering based on user intent
+- **📱 Fully Responsive** - Optimized for all devices
+- **⚡ Lightning Fast** - Built with Vite for optimal performance
 
-## Deploy to Vercel
+## 🚀 Quick Start
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR-USERNAME/YOUR-REPO)
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Gemini API key ([get one here](https://aistudio.google.com/app/apikey))
 
-### Quick Deploy
+### Installation
 
-1. **Push to GitHub** (if not already done):
-   ```bash
-   git add .
-   git commit -m "Ready for Vercel deployment"
-   git push
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/captflag/My-Portfolio.git
 
-2. **Import to Vercel**:
-   - Go to [vercel.com](https://vercel.com) and sign in
-   - Click **"New Project"**
-   - Import your GitHub repository
-   
-3. **Configure Environment Variables**:
-   - In the Vercel project settings, add:
-     - `GEMINI_API_KEY` = Your Gemini API key
-   - See [.env.example](.env.example) for all required variables
+# Navigate to project directory
+cd My-Portfolio
 
-4. **Deploy**:
-   - Click **"Deploy"**
-   - Wait for the build to complete
-   - Your app will be live at `https://your-project.vercel.app`
+# Install dependencies
+npm install
 
-### Files for Deployment
+# Create environment file
+cp .env.example .env.local
 
-This project includes all necessary Vercel configuration:
-- ✅ `vercel.json` - Vercel configuration with SPA routing
-- ✅ `.vercelignore` - Excludes unnecessary files from deployment
-- ✅ `.env.example` - Template for environment variables
+# Add your API key to .env.local
+# GEMINI_API_KEY=your_api_key_here
+```
 
-### Get Your Gemini API Key
+### Run Locally
 
-Get your free API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+```bash
+npm run dev
+```
 
+Visit `http://localhost:3000` to view the portfolio.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## 🌐 Deploy to Vercel
+
+1. Push your code to GitHub
+2. Import project on [Vercel](https://vercel.com)
+3. Add `GEMINI_API_KEY` environment variable
+4. Deploy! ✨
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React 19, TypeScript
+- **Styling:** Tailwind CSS (CDN)
+- **Build Tool:** Vite
+- **AI Integration:** Google Gemini API
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+
+## 📂 Project Structure
+
+```
+├── components/          # React components
+│   ├── TerminalHero.tsx
+│   ├── SolutionGrid.tsx
+│   ├── RAGVisualizer.tsx
+│   ├── AgenticContact.tsx
+│   └── ...
+├── services/           # API services
+├── App.tsx            # Main app component
+├── index.tsx          # Entry point
+├── vercel.json        # Vercel configuration
+└── package.json       # Dependencies
+```
+
+## 🎯 Key Components
+
+- **Terminal Hero** - Animated command-line interface introduction
+- **Solution Grid** - Showcase of AI capabilities and services
+- **RAG Visualizer** - Interactive demonstration of RAG architecture
+- **Strategic Roadmap** - Project development timeline
+- **POC Playground** - Lead generation with AI consultation
+- **Living Command Bar** - Intent-based navigation system
+
+## 🔐 Environment Variables
+
+Create a `.env.local` file with:
+
+```bash
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+## 📝 License
+
+© 2026 CAPT AI Systems. All rights reserved.
+
+## 👨‍💻 Developer
+
+**Divyansh Dewangan**
+- Email: divyanshd666@gmail.com
+- LinkedIn: [linkedin.com/in/divyansh-dewangan-aa8aa721b](https://www.linkedin.com/in/divyansh-dewangan-aa8aa721b/)
+- GitHub: [@captflag](https://github.com/captflag)
+
+---
+
+Built with ❤️ and AI • Powered by Gemini
