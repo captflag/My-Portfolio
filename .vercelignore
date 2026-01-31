@@ -1,0 +1,23 @@
+# Dependencies
+node_modules
+
+# Source files (not needed for deployment)
+*.tsx
+*.ts
+!vite.config.ts
+!tsconfig.json
+
+# Development files
+.env.local
+.env*.local
+
+# Build artifacts
+dist-ssr
+
+# Editor
+.vscode
+.idea
+
+# Logs
+*.log
+npm-debug.log*

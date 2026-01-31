@@ -1,0 +1,8 @@
+{
+  "name": "CAPT AI - Technical Mono Portfolio",
+  "description": "A high-end, code-brutalist portfolio for a 2026 AI Freelancer featuring live AI playgrounds and agentic interactions.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
